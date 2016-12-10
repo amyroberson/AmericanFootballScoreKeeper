@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10B14881DFB46580038C894 /* functionsTry2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B14871DFB46580038C894 /* functionsTry2.swift */; };
 		E166EE261DF9DAD000F42910 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E166EE251DF9DAD000F42910 /* main.swift */; };
 		E166EE2D1DF9DAE600F42910 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = E166EE2C1DF9DAE600F42910 /* Team.swift */; };
-		E166EE2F1DF9E09400F42910 /* testingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E166EE2E1DF9E09400F42910 /* testingFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E10B14871DFB46580038C894 /* functionsTry2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = functionsTry2.swift; sourceTree = "<group>"; };
 		E166EE221DF9DAD000F42910 /* AmericanFootBallScoreKeeper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AmericanFootBallScoreKeeper; sourceTree = BUILT_PRODUCTS_DIR; };
 		E166EE251DF9DAD000F42910 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E166EE2C1DF9DAE600F42910 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -61,8 +62,9 @@
 		E166EE241DF9DAD000F42910 /* AmericanFootBallScoreKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				E166EE251DF9DAD000F42910 /* main.swift */,
 				E166EE2C1DF9DAE600F42910 /* Team.swift */,
+				E10B14871DFB46580038C894 /* functionsTry2.swift */,
+				E166EE251DF9DAD000F42910 /* main.swift */,
 				E166EE2E1DF9E09400F42910 /* testingFunction.swift */,
 			);
 			path = AmericanFootBallScoreKeeper;
@@ -127,9 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10B14881DFB46580038C894 /* functionsTry2.swift in Sources */,
 				E166EE2D1DF9DAE600F42910 /* Team.swift in Sources */,
 				E166EE261DF9DAD000F42910 /* main.swift in Sources */,
-				E166EE2F1DF9E09400F42910 /* testingFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +263,7 @@
 				E166EE2B1DF9DAD000F42910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

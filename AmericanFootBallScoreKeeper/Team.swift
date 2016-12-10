@@ -8,36 +8,51 @@
 
 import Foundation
 
-class Team {
+struct Team {
     var name: String
-    var scoresArray : [String]
-    var totalScore: Int
-    
-    init(name: String, scores: [String], totalScore: Int) {
+    var scoreArray : [ScoringOption]
+    let scoringOptions = ["Touch Down", "Extra Point", "Field Goal", "Safety", "Two Point Conversion"]
+    init(name: String) {
         self.name = name
-        self.scoresArray = scores
-        self.totalScore = totalScore
+        self.scoreArray = []
     }
     
-    func scoresToTotalScore(scores: [String]) -> Int? {
-        let possibleScores = [ "touchDown", "extraPoint", "saftey", "twoPointConversion", "fieldGoal"]
-        for score in scores{
-            if possibleScores.contains(score){
-                switch score{
-                case "touchdown":
-                    totalScore += 6
-                case "extraPoint", "fieldGoal":
-                    totalScore += 1
-                
-                case "saftey", "twopPointConversion":
-                    totalScore += 2
-                default:
-                    print("I need to work on this")
-                    return nil
-                    
-                }
+    func scoresToScore() -> Int {
+        var newScore: Int = 0
+        for score in self.scoreArray{
+            switch score{
+            case .touchDown:
+                newScore = newScore + 6
+            case .extraPoint, .fieldGoal:
+                newScore = newScore + 1
+            case .saftey, .twoPointConversion:
+                newScore =  newScore + 2
+            case .invalid:
+                newScore = newScore + 0
             }
         }
-        return totalScore
+        return newScore
     }
 }
+
+enum ScoringOption {
+    case touchDown
+    case fieldGoal
+    case extraPoint
+    case saftey
+    case twoPointConversion
+    case invalid
+}
+
+
+struct Game {
+    var teamOne: Team
+    var teamTwo: Team
+    var team1Score: Int{
+        return self.teamOne.scoresToScore()
+    }
+    var team2Score: Int{
+        return self.teamTwo.scoresToScore()
+    }
+}
+
