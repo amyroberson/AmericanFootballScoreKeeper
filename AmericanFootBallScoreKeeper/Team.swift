@@ -25,7 +25,7 @@ struct Team {
                 newScore = newScore + 6
             case .extraPoint, .fieldGoal:
                 newScore = newScore + 1
-            case .saftey, .twoPointConversion:
+            case .safety, .twoPointConversion:
                 newScore =  newScore + 2
             case .invalid:
                 newScore = newScore + 0
@@ -39,7 +39,7 @@ enum ScoringOption {
     case touchDown
     case fieldGoal
     case extraPoint
-    case saftey
+    case safety
     case twoPointConversion
     case invalid
 }
