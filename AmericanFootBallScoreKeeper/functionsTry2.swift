@@ -148,9 +148,23 @@ func wantToStartNewGame() -> Bool {
         print("Thanks for Keeping Score")
         //need to update for multiple games!!!!
         var index = 0
+        var printScorePrompt = ""
         for _ in gameArray {
-            print(" The Score for \(gameArray[index].teamOne.name) Vs. \(gameArray[index].teamTwo.name) is \(gameArray[index].teamOne.scoresToScore()) - \(gameArray[index].teamTwo.scoresToScore())" )
+            printScorePrompt = printScorePrompt + ("\nTo see the score for \(gameArray[index].teamOne.name) Vs. \(gameArray[index].teamTwo.name) Enter \(index + 1)")
             index += 1
+        }
+        var x = getIntFromTheUser(prompt: printScorePrompt)
+        
+        while x <= gameArray.count{
+            print(" The Score for \(gameArray[x - 1].teamOne.name) Vs. \(gameArray[x - 1].teamTwo.name) is \(gameArray[x - 1 ].teamOne.scoresToScore()) - \(gameArray[x - 1].teamTwo.scoresToScore())" )
+        
+            let YesNo = getStringFromTheUser(prompt:"Would you like to see another score? y for Yes or n for No")
+            if !evaluateYN(input: YesNo){
+                return false
+            } else {
+                x = getIntFromTheUser(prompt: printScorePrompt)
+
+            }
         }
         return false
     }
@@ -167,10 +181,10 @@ func startGame() {
         done = isGameOver()
     }
     
-    if wantToStartNewGame() { // not written yet
+    if wantToStartNewGame() {
         startGame()
     }
-    //printGameScores!
+    
 }
 
 
